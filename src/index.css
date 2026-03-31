@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;0,800;1,800&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  
+  --color-primary: #81e9ff;
+  --color-secondary: #ff7524;
+  --color-tertiary: #ff6b98;
+  --color-surface: #0e0e10;
+  --color-surface-container: #19191c;
+  --color-surface-container-low: #131315;
+  --color-surface-bright: #2c2c2f;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-white font-sans;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrim-bottom {
+    background: linear-gradient(to top, rgba(14, 14, 16, 0.95) 0%, rgba(14, 14, 16, 0.2) 60%, rgba(14, 14, 16, 0) 100%);
+  }
+  
+  .editorial-shadow {
+    text-shadow: 0 4px 12px rgba(0,0,0,0.8);
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+  }
+}
